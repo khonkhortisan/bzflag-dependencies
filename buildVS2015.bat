@@ -72,6 +72,7 @@ if %PDCURSES_RESULT% == 0 (
 )
 
 echo(
+
 echo ==============================
 echo Building zlib
 echo ==============================
@@ -97,6 +98,16 @@ if %ZLIB_RESULT% == 0 (
 
 echo(
 echo ==============================
+echo Updating c-ares
+echo ==============================
+
+cd %srcroot%
+git clone https://github.com/c-ares/c-ares.git
+cd %srcroot%\c-ares
+git pull
+
+echo(
+echo ==============================
 echo Building c-ares
 echo ==============================
 
@@ -118,6 +129,16 @@ rename INSTALL.temp INSTALL
 if %CARES_RESULT% == 0 (
     move "%outputroot%\lib\*.dll" "%outputroot%\bin\"
 )
+
+echo(
+echo ==============================
+echo Updating libcurl
+echo ==============================
+
+cd %srcroot%
+git clone https://github.com/curl/curl.git
+cd %srcroot%\curl
+git pull
 
 echo(
 echo ==============================
