@@ -149,30 +149,6 @@ if %CURL_RESULT% == 0 (
 )
 
 echo(
-echo ==============================
-echo Building regex
-echo ==============================
-
-cd %srcroot%\regex
-if "%ARCH%" == "x86" (
-	devenv /build "%CONF%|Win32" /project regex regex.sln
-) else (
-	devenv /build "%CONF%|x64" /project regex regex.sln
-)
-
-set REGEX_RESULT=%ERRORLEVEL%
-
-if %REGEX_RESULT% == 0 (
-	cd %srcroot%\regex
-	if "%ARCH%" == "x86" (
-		copy regex_Win32_%CONF%\regex.lib %outputroot%\lib
-	) else (
-		copy regex_x64_%CONF%\regex.lib %outputroot%\lib
-	)
-	copy regex.h %outputroot%\include
-)
-
-echo(
 echo(
 echo #######################
 echo # Final build results #
@@ -197,11 +173,6 @@ if %CURL_RESULT% == 0 (
 	echo curl ................... SUCCESS!
 ) else (
 	echo curl ................... FAILED!
-)
-if %REGEX_RESULT% == 0 (
-	echo regex .................. SUCCESS!
-) else (
-	echo regex .................. FAILED!
 )
 
 cd %origroot%
