@@ -180,6 +180,14 @@ if %CURL_RESULT% == 0 (
 )
 
 echo(
+echo ==============================
+echo Setting environment variables
+echo ==============================
+echo BZ_DEPS: %origroot%
+setx BZ_DEPS %origroot%
+echo WM_SETTINGCHANGE was not broadcasted. You may need to restart for the change to take effect.
+
+echo(
 echo(
 echo #######################
 echo # Final build results #
