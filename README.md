@@ -7,8 +7,8 @@ This repository contains third-party libraries that are needed to build BZFlag o
 
 Here is a list of the upstream source locations:
 
-* [c-ares](https://github.com/bagder/c-ares.git)
-* [libcurl](https://github.com/bagder/curl.git)
+* [c-ares](https://github.com/c-ares/c-ares.git)
+* [libcurl](https://github.com/curl/curl.git)
 * [PDCurses](http://sourceforge.net/projects/pdcurses/files/pdcurses/)
 * [zlib](https://github.com/madler/zlib.git)
 
