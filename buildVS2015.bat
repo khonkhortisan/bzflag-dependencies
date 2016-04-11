@@ -72,6 +72,16 @@ if %PDCURSES_RESULT% == 0 (
 )
 
 echo(
+echo ==============================
+echo Updating zlib
+echo ==============================
+
+cd %srcroot%
+git clone https://github.com/madler/zlib.git
+cd %srcroot%\zlib
+git pull
+
+echo(
 
 echo ==============================
 echo Building zlib
