@@ -173,6 +173,17 @@ if %REGEX_RESULT% == 0 (
 )
 
 echo(
+echo ==============================
+echo Including SDL2
+echo ==============================
+
+cd %srcroot%\SDL2-devel-2.0.4-VC
+mkdir %outputroot%\include\SDL2
+copy SDL2-2.0.4\include\* %outputroot%\include\SDL2
+copy SDL2-2.0.4\lib\%ARCH%\*.lib %outputroot%\lib
+copy SDL2-2.0.4\lib\%ARCH%\SDL2.dll %outputroot%\bin
+
+echo(
 echo(
 echo #######################
 echo # Final build results #
